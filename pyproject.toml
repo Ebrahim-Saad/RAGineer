@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-assistant"
+version = "0.1.0"
+description = "AI Assistant project"
+requires-python = ">=3.11, <4.0"
+dependencies = [
+    "fastapi==0.115.12",
+    "uvicorn==0.34.2",
+    "pydantic-settings==2.9.1",
+    "langchain==0.3.24",
+    "langchain-community==0.3.23",
+    "langchain-together==0.3.0",
+    "langchain-tavily==0.1.5",
+    "langchainhub==0.1.21",
+    "langgraph==0.3.34",
+    "json-repair==0.43.0",
+    "tavily-python==0.7.0",
+    "tiktoken==0.9.0",
+    "python-multipart==0.0.20",
+    "aiofiles==24.1.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "black",
+    "isort",
+    "flake8"
+]
+
