@@ -7,6 +7,7 @@ class Settings(BaseSettings):
     ALLOWED_FILE_TYPES: list[str]
     MAXIMUM_FILE_SIZE: int
     DEFAULT_CHUNK_SIZE: int
+    DEFAULT_CHUNK_OVERLAP: int
     class Config:
         env_file = ".env"
 

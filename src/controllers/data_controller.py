@@ -4,6 +4,7 @@ from core.config import get_settings, Settings
 import os
 import aiofiles
 from typing import Optional
+from api.schemas.data_schemas import AddFileSchema, DeleteFileSchema
 
 class DataController(BaseController):
     def __init__(self):
@@ -33,7 +34,7 @@ class DataController(BaseController):
         
         return True
     
-    async def save_file(self, file: UploadFile = File(...), path: str = "uploads") -> str:
+    async def save_file(self, user_id: str, file_extension: str, file: UploadFile = File(...)) -> str:
         """
         Save a file in chunks to prevent memory issues with large files.
         
@@ -47,11 +48,14 @@ class DataController(BaseController):
         Raises:
             HTTPException: If the file cannot be saved
         """
-        file_path = os.path.join(self.base_dir, "assets", path)
+
+        name = await self.generate_random_id(10, False) + "." + file_extension
+
+        file_path = os.path.join(self.users_files_path, user_id)
         if not os.path.exists(file_path):
             os.makedirs(file_path, exist_ok=True)
         
-        file_path = os.path.join(file_path, file.filename)
+        file_path = os.path.join(file_path, name)
         
         try:
             async with aiofiles.open(file_path, "wb") as f:
