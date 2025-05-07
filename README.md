@@ -62,12 +62,14 @@ DEFAULT_CHUNK_SIZE=100 # in KB
 
 # AI Settings
 AI_MODEL=gpt-3.5-turbo
-AI_TEMPERATURE=0.7
-AI_MAX_TOKENS=1000
 
-API Keys
+# API Keys
 OPENAI_API_KEY=your_openai_api_key
 TAVILY_API_KEY=your_tavily_api_key
+
+# MongoDB Settings
+MONGO_INITDB_ROOT_USERNAME=admin
+MONGO_INITDB_ROOT_PASSWORD=password
 ```
 
 ## Running the Application
@@ -82,6 +84,11 @@ poetry run uvicorn src.main:app --reload --host 0.0.0.0 --port 8000
 poetry run uvicorn src.main:app --host 0.0.0.0 --port 8000
 ```
 
+## Running Docker
+```bash
+docker-compose up -d
+```
+
 ## API Endpoints
 
 ### File Upload
@@ -90,61 +97,14 @@ poetry run uvicorn src.main:app --host 0.0.0.0 --port 8000
   - Automatic file validation
   - Secure storage
 
+### File Deletion
+- **DELETE** `/data/delete_file`
+  - Delete a file by providing user ID and file ID
+  - Removes file from the server and the database
+
 ### AI Assistant
 - Under development
-
-## Project Structure
-
-```
-ai-assistant/
-├── src/
-│   ├── api/
-│   │   ├── routes/
-│   │   │   └── V1/
-│   ├── controllers/
-│   ├── core/
-│   │   ├── config.py
-│   └── main.py
-├── tests/
-├── assets/
-├── .env
-├── .env.example
-├── pyproject.toml
-└── README.md
-```
-
-## Development
-
-### Running Tests
-```bash
-poetry run pytest
-```
-
-### Code Formatting
-```bash
-poetry run black .
-poetry run isort .
-```
-
-### Linting
-```bash
-poetry run flake8
-```
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- FastAPI for the amazing web framework
-- LangChain for AI capabilities
-- Poetry for dependency management

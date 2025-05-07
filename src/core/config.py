@@ -8,6 +8,9 @@ class Settings(BaseSettings):
     MAXIMUM_FILE_SIZE: int
     DEFAULT_CHUNK_SIZE: int
     DEFAULT_CHUNK_OVERLAP: int
+    MONGODB_DATABASE: str
+    MONGODB_URL: str
+    
     class Config:
         env_file = ".env"
 
