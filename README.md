@@ -1,10 +1,10 @@
 # RAGineer
 
-An LLM-based project, aims to be a good point to start from for any RAG application or AI Agent, Designed for maximum efficiency and scalability. 
+An LLM-based project, aims to be a good point to start from for any RAG application or AI Agent, Designed for maximum efficiency, security and scalability. 
 
 ## Features
 
-### NOTE: the project is in it's development phase, some of the following features aren't ready yet.
+### NOTE: the project is in its beginning of development phase, and not ready for use yet.
 
 - Various database options
 - Various LLM setups for generation/embeddings
