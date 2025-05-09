@@ -43,7 +43,7 @@ brew install poetry
 1. Clone the repository:
 ```bash
 git clone https://github.com/Ebrahim-Saad/RAGineer.git
-cd ai-assistant
+cd RAGineer
 ```
 
 2. Install dependencies:
