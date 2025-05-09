@@ -1,13 +1,16 @@
-# AI Assistant
+# RAGineer
 
-A FastAPI-based AI assistant that provides intelligent responses and file handling capabilities.
+An LLM-based project, aims to be a good point to start for any RAG application or AI Agent, Designed for maximum efficiency and scalability. 
 
 ## Features
 
-- File upload and processing with chunked streaming
-- AI-powered responses using LangChain (under development)
-- Secure file validation and storage (under development)
-- RESTful API endpoints
+### NOTE: the project is in it's development phase, some of the following features aren't ready yet.
+
+- Various database options
+- Various LLM setups for generation/embeddings
+- Support for basic files upload and processing with chunked streaming
+- Secure file validation and storage
+- RESTful API endpoints using FASTAPI
 - Environment-based configuration
 
 ## Prerequisites
@@ -53,24 +56,7 @@ poetry install
 cp .env.example .env
 ```
 
-Edit the `.env` file with your configuration:
-```env
-# File Upload Settings
-MAXIMUM_FILE_SIZE=10 # in MB
-ALLOWED_FILE_TYPES=["application/pdf", "text/plain"]
-DEFAULT_CHUNK_SIZE=100 # in KB
-
-# AI Settings
-AI_MODEL=gpt-3.5-turbo
-
-# API Keys
-OPENAI_API_KEY=your_openai_api_key
-TAVILY_API_KEY=your_tavily_api_key
-
-# MongoDB Settings
-MONGO_INITDB_ROOT_USERNAME=admin
-MONGO_INITDB_ROOT_PASSWORD=password
-```
+Edit the `.env` file with your own configuration
 
 ## Running the Application
 
@@ -102,7 +88,7 @@ docker-compose up -d
   - Delete a file by providing user ID and file ID
   - Removes file from the server and the database
 
-### AI Assistant
+### Agentic RAG features
 - Under development
 
 ## License

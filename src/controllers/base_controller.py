@@ -20,3 +20,6 @@ class BaseController:
             return ''.join(random.choices(string.digits, k=length))
         else:
             return ''.join(random.choices(string.ascii_letters + string.digits, k=length))
+        
+    async def get_vector_db_path(self):
+        return self.base_dir + self.settings.VECTOR_DB_PATH
